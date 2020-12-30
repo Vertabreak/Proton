@@ -29,10 +29,11 @@ or guarantee that anyone will help you with this process.
 
 We strongly recommend that most users use the production build of Proton.
 
-The most current source for Proton is here:
-  <https://github.com/ValveSoftware/Proton>
+Acquire Proton's source by cloning <https://github.com/ValveSoftware/Proton>
+and checking out the branch you desire. Be sure to update submodules when
+switching branches.
 
-Which you can clone to your system with this command:
+You can clone the latest Proton to your system with this command:
 
         git clone --recurse-submodules https://github.com/ValveSoftware/Proton.git proton
         cd proton
@@ -274,9 +275,11 @@ the Wine prefix. Removing the option will revert to the previous behavior.
 | <tt>noesync</tt>      | <tt>PROTON_NO_ESYNC</tt>       | Do not use eventfd-based in-process synchronization primitives. |
 | <tt>nofsync</tt>      | <tt>PROTON_NO_FSYNC</tt>       | Do not use futex-based in-process synchronization primitives. (Automatically disabled on systems with no `FUTEX_WAIT_MULTIPLE` support.) |
 | <tt>forcelgadd</tt>   | <tt>PROTON_FORCE_LARGE_ADDRESS_AWARE</tt> | Force Wine to enable the LARGE_ADDRESS_AWARE flag for all executables. Enabled by default. |
+| <tt>gamedrive</tt>    | <tt>PROTON_SET_GAME_DRIVE</tt> | Create an S: drive which points to the Steam Library which contains the game. |
 | <tt>noforcelgadd</tt> |                                | Disable forcelgadd. If both this and `forcelgadd` are set, enabled wins. |
 | <tt>oldglstr</tt>     | <tt>PROTON_OLD_GL_STRING</tt>  | Set some driver overrides to limit the length of the GL extension string, for old games that crash on very long extension strings. |
 | <tt>vkd3dfl12</tt>    |                                | Force the Direct3D 12 feature level to 12, regardless of driver support. |
+| <tt>vkd3dbindlesstb</tt>|                              | Put `force_bindless_texel_buffer` into `VKD3D_CONFIG`. |
 | <tt>hidenvgpu</tt>    | <tt>PROTON_HIDE_NVIDIA_GPU</tt>| Force Nvidia GPUs to always be reported as AMD GPUs. Some games require this if they depend on Windows-only Nvidia driver functionality. See also DXVK's nvapiHack config, which only affects reporting from Direct3D. |
 |                       | <tt>WINE_FULLSCREEN_INTEGER_SCALING</tt> | Enable integer scaling mode, to give sharp pixels when upscaling. |
 | <tt>cmdlineappend:</tt>|                               | Append the string after the colon as an argument to the game command. May be specified more than once. Escape commas and backslashes with a backslash. |
